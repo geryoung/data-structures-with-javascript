@@ -1,1 +1,7 @@
-# datastructures-with-javascript
+### data structures with javascript
+
+* List
+* Stack
+* Queue
+* Hash Table
+
