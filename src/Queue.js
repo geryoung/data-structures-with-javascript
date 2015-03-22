@@ -46,7 +46,16 @@
 			return this.head;
 		},
 		clear : function () {
-
+			var node = this.head;
+			while(node !== null) {
+				var nextNode = node.next;
+				node.pre = null;
+				node.next = null;
+				node = nextNode;
+				this.length --;
+			}
+			this.head = null;
+			this.end = null;
 		},
 		shift : function () {
 			var tobeRemoved = this.head;
@@ -54,7 +63,7 @@
 				
 				var first = tobeRemoved.next;
 				first.pre = null;
-
+				this.head = first;
 				this.length -- ;	
 			};
 			
@@ -106,8 +115,10 @@ console.log( queue.length === 3 );
 console.log( queue.size() === 3 );
 
 queue.clear();
+console.log( queue.length );
 console.log( queue.length === 0 );
 
-console.log( queue.size() === 3 );
+
+console.log( queue.size() === 0 );
 
 
